@@ -9,7 +9,12 @@ import (
 	"github.com/gofrs/flock"
 )
 
-const KCL_VERSION = "v0.12.3"
+// KCL_VERSION is a sentinel used to invalidate cached cdylibs under
+// $XDG_CACHE_HOME/kcl/kcl. The "-fork-N" suffix differentiates this
+// fork's locally-built binary from the upstream-released one — bump
+// the integer suffix whenever the embedded cdylib changes in a way
+// users' cached copies need to be replaced.
+const KCL_VERSION = "v0.12.3-fork-1"
 
 func getVersion() string {
 	return fmt.Sprintf("%s-%s-%s", KCL_VERSION, runtime.GOOS, runtime.GOARCH)
