@@ -11,9 +11,9 @@ license = "Apache-2.0"
 
 [dependencies]
 anyhow = "1"
-kcl-api = { git = "https://github.com/kcl-lang/kcl", version = "0.12.3" }
-kcl-evaluator = { git = "https://github.com/kcl-lang/kcl", version = "0.12.3" }
-kcl-loader = { git = "https://github.com/kcl-lang/kcl", version = "0.12.3" }
-kcl-parser = { git = "https://github.com/kcl-lang/kcl", version = "0.12.3" }
-kcl-runtime = { git = "https://github.com/kcl-lang/kcl", version = "0.12.3" }
-kcl-primitives = { git = "https://github.com/kcl-lang/kcl", version = "0.12.3" }
+kcl-api = { path = "../kcl-lang/crates/api" }
+kcl-evaluator = { path = "../kcl-lang/crates/evaluator" }
+kcl-loader = { path = "../kcl-lang/crates/loader" }
+kcl-parser = { path = "../kcl-lang/crates/parser" }
+kcl-runtime = { path = "../kcl-lang/crates/runtime" }
+kcl-primitives = { path = "../kcl-lang/crates/primitives" }
