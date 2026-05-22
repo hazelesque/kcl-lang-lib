@@ -1,2 +1,0 @@
-schema C:
-    name: str

@@ -1,6 +1,0 @@
-module CKclLib [system] {
-    header "include/kcl_lib_c.h"
-    link "kcl_lib_c"
-
-    export *
-}
