@@ -4,8 +4,8 @@ import (
 	_ "embed"
 )
 
-//go:embed windows-amd64/kcl.dll
+//go:embed x86_64-pc-windows-msvc/kcl.dll
 var CliLib []byte
 
-//go:embed windows-amd64/kcl.lib
+//go:embed x86_64-pc-windows-msvc/kcl.lib
 var ExportLib []byte

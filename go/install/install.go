@@ -11,10 +11,16 @@ import (
 
 // KCL_VERSION is a sentinel used to invalidate cached cdylibs under
 // $XDG_CACHE_HOME/kcl/kcl. The "-fork-N" suffix differentiates this
-// fork's locally-built binary from the upstream-released one — bump
-// the integer suffix whenever the embedded cdylib changes in a way
+// fork's embedded binaries from the upstream-released ones — bump
+// the integer suffix whenever the embedded contents change in a way
 // users' cached copies need to be replaced.
-const KCL_VERSION = "v0.12.3-fork-1"
+//
+// -fork-2: slot rename to full rustc target triples; linux-amd64 slot
+//          restored to upstream glibc binary (was Chimera-musl in
+//          -fork-1). Chimera consumers must build with `-tags chimera`
+//          and link against `x86_64-chimera-linux-musl/libkcl.a` via
+//          native_chimera_amd64.go.
+const KCL_VERSION = "v0.12.3-fork-2"
 
 func getVersion() string {
 	return fmt.Sprintf("%s-%s-%s", KCL_VERSION, runtime.GOOS, runtime.GOARCH)

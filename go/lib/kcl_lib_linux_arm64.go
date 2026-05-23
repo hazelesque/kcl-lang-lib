@@ -4,5 +4,5 @@ import (
 	_ "embed"
 )
 
-//go:embed linux-arm64/libkcl.so
+//go:embed aarch64-unknown-linux-gnu/libkcl.so
 var CliLib []byte

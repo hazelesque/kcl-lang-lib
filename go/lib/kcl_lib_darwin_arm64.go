@@ -4,5 +4,5 @@ import (
 	_ "embed"
 )
 
-//go:embed darwin-arm64/libkcl.dylib
+//go:embed aarch64-apple-darwin/libkcl.dylib
 var CliLib []byte

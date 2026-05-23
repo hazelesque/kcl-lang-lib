@@ -1,5 +1,5 @@
-//go:build !musl && (darwin || freebsd || linux || windows)
-// +build !musl
+//go:build !musl && !chimera && (darwin || freebsd || linux || windows)
+// +build !musl,!chimera
 // +build darwin freebsd linux windows
 
 package native

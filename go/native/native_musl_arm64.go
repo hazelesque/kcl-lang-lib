@@ -1,10 +1,10 @@
-//go:build musl && arm64
-// +build musl,arm64
+//go:build musl && arm64 && !chimera
+// +build musl,arm64,!chimera
 
 package native
 
 /*
-#cgo LDFLAGS: -L${SRCDIR}/../lib/linux-musl-arm64 -lkcl -static
+#cgo LDFLAGS: -L${SRCDIR}/../lib/aarch64-unknown-linux-musl -lkcl -static
 #include <stdlib.h>
 #include "../include/kcl.h"
 */
