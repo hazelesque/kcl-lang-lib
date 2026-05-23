@@ -20,7 +20,16 @@ import (
 //          -fork-1). Chimera consumers must build with `-tags chimera`
 //          and link against `x86_64-chimera-linux-musl/libkcl.a` via
 //          native_chimera_amd64.go.
-const KCL_VERSION = "v0.12.3-fork-2"
+//
+// -fork-3: Phase 2.5 Context cleanup. The kcl_value_plan_to_{json,yaml}
+//          C-API functions no longer mirror their output into the
+//          context — returned ValueRef::str now own their backing
+//          strings independently. The static archive in
+//          x86_64-chimera-linux-musl/libkcl.a is rebuilt against
+//          kcl-lang commit a08e12b7. The embedded .so slots (glibc,
+//          Alpine-musl) still ship upstream's stock binary and are
+//          unaffected by this bump.
+const KCL_VERSION = "v0.12.3-fork-3"
 
 func getVersion() string {
 	return fmt.Sprintf("%s-%s-%s", KCL_VERSION, runtime.GOOS, runtime.GOARCH)
